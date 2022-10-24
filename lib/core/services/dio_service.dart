@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
+import '../utils/config.dart';
+
 abstract class DioHttpService {
   String get baseUrl;
 
@@ -55,7 +57,7 @@ class DioHttpServiceImpl implements DioHttpService {
     }
   }
   @override
-  String get baseUrl => '';
+  String get baseUrl => Config.baseUrl;
 
   BaseOptions get baseOptions => BaseOptions(
         baseUrl: baseUrl,
