@@ -5,8 +5,8 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:fc_weather/features/home/home_view.dart' as _i3;
 import 'package:fc_weather/features/splash/splash_view.dart' as _i2;
+import 'package:fc_weather/features/wrapper/wrapper_view.dart' as _i3;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i4;
@@ -14,11 +14,11 @@ import 'package:stacked_services/stacked_services.dart' as _i4;
 class Routes {
   static const splashView = '/';
 
-  static const homeView = '/home-view';
+  static const wrapperView = '/wrapper-view';
 
   static const all = <String>{
     splashView,
-    homeView,
+    wrapperView,
   };
 }
 
@@ -29,8 +29,8 @@ class StackedRouter extends _i1.RouterBase {
       page: _i2.SplashView,
     ),
     _i1.RouteDef(
-      Routes.homeView,
-      page: _i3.HomeView,
+      Routes.wrapperView,
+      page: _i3.WrapperView,
     ),
   ];
 
@@ -41,9 +41,9 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i3.HomeView: (data) {
+    _i3.WrapperView: (data) {
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i3.HomeView(),
+        builder: (context) => const _i3.WrapperView(),
         settings: data,
       );
     },
@@ -70,14 +70,14 @@ extension NavigatorStateExtension on _i4.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToHomeView([
+  Future<dynamic> navigateToWrapperView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return navigateTo<dynamic>(Routes.homeView,
+    return navigateTo<dynamic>(Routes.wrapperView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
