@@ -3,8 +3,8 @@ import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 
-import '../../features/home/home_view.dart';
 import '../../features/splash/splash_view.dart';
+import '../../features/wrapper/wrapper_view.dart';
 import '../services/current_weather_service.dart';
 import '../services/database_service.dart';
 import '../services/dio_service.dart';
@@ -12,7 +12,7 @@ import '../services/dio_service.dart';
 @StackedApp(
   routes: [
     AdaptiveRoute(page: SplashView, initial: true),
-    AdaptiveRoute(page: HomeView),
+    AdaptiveRoute(page: WrapperView),
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),
