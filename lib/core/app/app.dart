@@ -5,6 +5,7 @@ import 'package:stacked_themes/stacked_themes.dart';
 
 import '../../features/home/home_view.dart';
 import '../../features/splash/splash_view.dart';
+import '../services/current_weather_service.dart';
 import '../services/database_service.dart';
 import '../services/dio_service.dart';
 
@@ -25,6 +26,10 @@ import '../services/dio_service.dart';
     LazySingleton(
       classType: DioHttpServiceImpl,
       asType: DioHttpService,
+    ),
+    LazySingleton(
+      classType: CurrentWeatherServiceImpl,
+      asType: CurrentWeatherService,
     ),
   ],
   logger: StackedLogger(),
