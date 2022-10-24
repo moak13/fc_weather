@@ -12,6 +12,7 @@ import 'package:stacked_services/src/navigation/navigation_service.dart';
 import 'package:stacked_services/src/snackbar/snackbar_service.dart';
 import 'package:stacked_themes/src/theme_service.dart';
 
+import '../services/current_weather_service.dart';
 import '../services/database_service.dart';
 import '../services/dio_service.dart';
 
@@ -30,4 +31,6 @@ Future<void> setupLocator(
   locator.registerLazySingleton(() => DatabaseMigrationService());
   locator.registerLazySingleton(() => DatabaseService());
   locator.registerLazySingleton<DioHttpService>(() => DioHttpServiceImpl());
+  locator.registerLazySingleton<CurrentWeatherService>(
+      () => CurrentWeatherServiceImpl());
 }
