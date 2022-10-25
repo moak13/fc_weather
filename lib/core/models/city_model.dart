@@ -9,6 +9,12 @@ class CityModel {
     this.lng,
   });
 
+  static const defaultCity = {
+    "city": "Lagos",
+    "lat": "6.4500",
+    "lng": "3.4000",
+  };
+
   CityModel.fromJson(Map<String, dynamic> json) {
     city = json['city'];
     lat = json['lat'];
