@@ -1,3 +1,5 @@
+import '../utils/metric_converter.dart';
+
 class MainModel {
   double? temp;
   int? pressure;
@@ -10,7 +12,7 @@ class MainModel {
   });
 
   MainModel.fromJson(Map<String, dynamic> json) {
-    temp = json['temp'];
+    temp = MetricConverter.toCelcius(json['temp']);
     pressure = json['pressure'];
     humidity = json['humidity'];
   }
