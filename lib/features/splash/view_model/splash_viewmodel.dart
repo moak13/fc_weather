@@ -13,7 +13,7 @@ class SplashViewModel extends BaseViewModel {
 
   void _moveToWrapper() {
     _log.i('navigating to wrapper view');
-    _navigationService.clearStackAndShow(Routes.wrapperView);
+    _navigationService.clearStackAndShow(Routes.homeView);
   }
 
   void handleStartUp() async {

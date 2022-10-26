@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 import '../../../core/app/app.locator.dart';
 import '../../../core/app/app.logger.dart';
@@ -12,9 +13,18 @@ import '../../../core/services/geo_locator_service.dart';
 class HomeViewModel extends BaseViewModel {
   final _currentWeatherService = locator<CurrentWeatherService>();
   final _geoLocatorService = locator<GeoLocatorService>();
+  final _themeService = locator<ThemeService>();
+
   CurrentWeatherModel? currentWeatherModel;
   LatLongModel? latLongModel;
+
   final _log = getLogger('HomeViewModel');
+
+  void actionSwitchTheme() {
+    _themeService.toggleDarkLightTheme();
+  }
+
+  bool get isDark => _themeService.isDarkMode;
 
   void actionTrackLatLong(LatLongModel data) {
     _log.i('selection logged');
@@ -28,6 +38,7 @@ class HomeViewModel extends BaseViewModel {
       lat: position.latitude.toString(),
       long: position.longitude.toString(),
     );
+    actionTrackLatLong(data);
     await actionFetchCurrentWeather(data);
   }
 
