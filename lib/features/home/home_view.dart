@@ -28,7 +28,7 @@ class HomeView extends StatelessWidget {
           appBar: AppBar(
             actions: [
               IconButton(
-                onPressed: () {},
+                onPressed: model.actionGetUserLocationWeather,
                 icon: const Icon(Icons.location_on),
               ),
             ],
