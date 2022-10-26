@@ -36,6 +36,7 @@ dependencies:
     sdk: flutter
   flutter_screenutil: ^5.5.4
   logger: ^1.1.0
+  permission_handler: ^10.2.0
   responsive_builder: ^0.4.3
   sqflite: ^2.1.0+1
   sqflite_migration_service: ^2.0.0-nullsafety.1

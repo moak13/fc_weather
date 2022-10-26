@@ -15,6 +15,7 @@ import 'package:stacked_themes/src/theme_service.dart';
 import '../services/current_weather_service.dart';
 import '../services/database_service.dart';
 import '../services/dio_service.dart';
+import '../services/permission_service.dart';
 
 final locator = StackedLocator.instance;
 
@@ -33,4 +34,6 @@ Future<void> setupLocator(
   locator.registerLazySingleton<DioHttpService>(() => DioHttpServiceImpl());
   locator.registerLazySingleton<CurrentWeatherService>(
       () => CurrentWeatherServiceImpl());
+  locator
+      .registerLazySingleton<PermissionService>(() => PermissionServiceImpl());
 }

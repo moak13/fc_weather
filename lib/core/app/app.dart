@@ -8,6 +8,7 @@ import '../../features/wrapper/wrapper_view.dart';
 import '../services/current_weather_service.dart';
 import '../services/database_service.dart';
 import '../services/dio_service.dart';
+import '../services/permission_service.dart';
 
 @StackedApp(
   routes: [
@@ -31,6 +32,10 @@ import '../services/dio_service.dart';
       classType: CurrentWeatherServiceImpl,
       asType: CurrentWeatherService,
     ),
+    LazySingleton(
+      classType: PermissionServiceImpl,
+      asType: PermissionService,
+    )
   ],
   logger: StackedLogger(),
 )
