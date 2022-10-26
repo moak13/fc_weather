@@ -8,6 +8,7 @@ import '../../features/wrapper/wrapper_view.dart';
 import '../services/current_weather_service.dart';
 import '../services/database_service.dart';
 import '../services/dio_service.dart';
+import '../services/geo_locator_service.dart';
 import '../services/permission_service.dart';
 
 @StackedApp(
@@ -35,7 +36,11 @@ import '../services/permission_service.dart';
     LazySingleton(
       classType: PermissionServiceImpl,
       asType: PermissionService,
-    )
+    ),
+    LazySingleton(
+      classType: GeoLocatorServiceImpl,
+      asType: GeoLocatorService,
+    ),
   ],
   logger: StackedLogger(),
 )
